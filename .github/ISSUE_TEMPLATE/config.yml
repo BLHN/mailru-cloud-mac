@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Вопросы и идеи (Discussions)
+    url: https://github.com/BLHN/mailru-cloud-mac/discussions
+    about: Как подключить Облако, как пользоваться, предложения. Questions and ideas.
+  - name: Инструкция (README)
+    url: https://github.com/BLHN/mailru-cloud-mac#readme
+    about: Установка, подключение, ограничения. Install, connect, limitations.
+  - name: Уязвимость / Vulnerability
+    url: https://github.com/BLHN/mailru-cloud-mac/security/advisories/new
+    about: Только приватно. Privately only.

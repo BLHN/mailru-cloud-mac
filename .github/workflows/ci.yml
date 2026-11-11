@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Privacy gate
+        run: scripts/privacy-gate.sh
+
+      - name: Check Info.plist
+        run: plutil -lint Packaging/Info.plist
+
+      - name: Build (arm64 and x86_64)
+        run: |
+          MIN_OS="$(/usr/libexec/PlistBuddy -c 'Print :LSMinimumSystemVersion' Packaging/Info.plist)"
+          for ARCH in arm64 x86_64; do
+            swift build -c release --triple "$ARCH-apple-macosx$MIN_OS" --build-path ".build/release-$ARCH"
+          done
+
+      - name: Build (dev)
+        run: swift build -c release --build-path .build/dev -Xswiftc -DCLOUDMAIL_DEV

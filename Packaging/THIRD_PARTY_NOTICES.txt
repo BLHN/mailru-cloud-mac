@@ -1,0 +1,40 @@
+Third-party software in this app
+================================
+
+The app bundle contains rclone, a separate program that the app starts to
+talk to the cloud. It is shipped unmodified, as published by the rclone
+project.
+
+rclone
+------
+Version:  v1.75.2 (official macOS builds for arm64 and amd64, combined into
+          one universal binary with lipo and signed together with the app;
+          the code itself is unchanged)
+Location: Contents/Helpers/rclone
+Website:  https://rclone.org
+Source:   https://github.com/rclone/rclone/tree/v1.75.2
+Licence:  MIT (text below; also in Contents/Resources/Licenses/rclone-COPYING.txt)
+
+Copyright (C) 2019 by Nick Craig-Wood https://www.craig-wood.com/nick/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+rclone is written in Go and is built from many open source Go modules, each
+under its own licence (mostly MIT, BSD and Apache 2.0). The full list of those
+modules for this version is in go.mod of the source tag above.

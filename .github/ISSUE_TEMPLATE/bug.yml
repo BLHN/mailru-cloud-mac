@@ -1,0 +1,53 @@
+name: Ошибка / Bug
+description: Что-то работает не так. Something does not work.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Никогда не вставляйте сюда пароль, даже пароль для приложения. Уберите из журнала свою почту и личные пути.
+        Never paste a password here. Remove your e-mail and personal paths from logs.
+  - type: input
+    id: version
+    attributes:
+      label: Версия приложения / App version
+      description: Настройки, внизу. Settings, at the bottom.
+      placeholder: 2.0 (4)
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: Версия macOS / macOS version
+      placeholder: "26.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: chip
+    attributes:
+      label: Процессор / Chip
+      options:
+        - Apple Silicon (M1 и новее)
+        - Intel
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Что делали и что случилось / Steps and what happened
+      description: По шагам. Что ожидали увидеть? Step by step. What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Кусок журнала / Log excerpt
+      description: Настройки → Журнал → Показать журнал (~/Library/Logs/CloudMail.log). Несколько строк вокруг ошибки.
+      render: text
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Приватность / Privacy
+      options:
+        - label: Я убрал личные пути и почту, пароль не вставляю. I removed personal paths and my e-mail, and I am not pasting any password.
+          required: true

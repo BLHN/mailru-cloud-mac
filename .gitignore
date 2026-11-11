@@ -1,0 +1,8 @@
+.build/
+dist/
+.swiftpm/
+xcuserdata/
+*.xcodeproj
+*.log
+.DS_Store
+docs/screenshots/frames/

@@ -1,0 +1,18 @@
+name: Идея / Feature request
+description: Чего не хватает. What is missing.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу хотите решить / What problem would it solve
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Как это могло бы выглядеть / How could it work
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Как справляетесь сейчас / Current workaround

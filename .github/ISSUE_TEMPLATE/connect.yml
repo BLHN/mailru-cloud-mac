@@ -1,0 +1,64 @@
+name: Не получается подключить Облако / Cannot connect
+description: Пароль не подходит, нет кнопки «Создать», Mail.ru просит подписку. Sign-in problems.
+labels: [connect]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Сначала проверьте раздел «Как подключить Облако» в README. Никогда не вставляйте сюда пароль.
+        Please read "Connect" in the README first. Never paste a password here.
+  - type: dropdown
+    id: plan
+    attributes:
+      label: Тариф / Plan
+      options:
+        - Бесплатный
+        - Платный (Mail Space или другой)
+        - Не знаю
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Год создания ящика (примерно) / Mailbox created (year)
+      placeholder: "2015"
+  - type: dropdown
+    id: vkid
+    attributes:
+      label: Вход через VK ID / Signs in with VK ID
+      options: [Да, Нет, Не знаю]
+  - type: dropdown
+    id: phone
+    attributes:
+      label: Телефон привязан к ящику / Phone linked
+      options: [Да, Нет, Не знаю]
+  - type: dropdown
+    id: create
+    attributes:
+      label: Есть ли кнопка «Создать» на странице паролей для внешних приложений / Is there a "Создать" button
+      options: [Да, Нет, Предлагают подписку, Не знаю]
+    validations:
+      required: true
+  - type: dropdown
+    id: access
+    attributes:
+      label: Тип доступа у созданного пароля / Access type
+      options:
+        - Полный доступ к Облаку
+        - Полный доступ к Почте, Облаку, Календарю
+        - Другой
+        - Пароль не создавал
+  - type: textarea
+    id: error
+    attributes:
+      label: Текст ошибки в приложении / Error text
+      description: Дословно или скриншот без почты и пароля. Word for word, or a screenshot without e-mail and password.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Приватность / Privacy
+      options:
+        - label: Я убрал личные пути и почту, пароль не вставляю. I removed personal paths and my e-mail, and I am not pasting any password.
+          required: true
